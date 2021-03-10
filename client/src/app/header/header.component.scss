@@ -1,0 +1,50 @@
+.menu {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+   
+    a{
+        font-size: 0.9rem;
+        background-color: rgb(176, 94, 31);
+        border-radius: 5px;
+        color: white;
+        padding: 10px;
+        margin:5px;
+    }
+
+    a:hover {
+        background-color: rgba(255, 209, 129, 0.722);
+    }
+
+    a:focus {
+        //border: solid 3px black;
+        background-color: rgba(255, 209, 129, 0.722);
+    }
+    
+}
+
+.bannier {
+    background-color: rgb(55, 55, 55);    
+    border: solid rgb(176, 94, 31) 3px;
+    border-radius: 10px;
+}
+
+.job-place {
+    
+    h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        font-style: italic;
+        color: rgba(255, 209, 129, 0.722);
+
+    }
+}
+
+img {
+    width: 100%;
+    padding: 40px;
+}
+
+p {
+    color: whitesmoke
+}

@@ -1,0 +1,7 @@
+@import '../colors.scss';
+
+.frame {
+    border: solid 1px $btn-main;
+    border-radius: 20px;
+    background-color: $post-bg;
+}

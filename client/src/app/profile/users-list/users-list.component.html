@@ -1,0 +1,14 @@
+<li [ngClass]="{'list-group-item': true,
+                'items-users-list': true}">
+    <div class="row">
+    <div class="profile-link col-8 mr-auto">
+        <a routerLink="/profile/{{userName}}" (click)="onSeeProfile()">{{userName}}</a>
+        <p>{{firstname}} {{lastname}}</p>
+        <p><span>Service {{serviceName}}</span></p>
+        
+    </div>
+    <div class="profilePic col-4 py-0 pr-1" >
+        <img [src]="userImage">
+    </div>
+    </div>
+</li>

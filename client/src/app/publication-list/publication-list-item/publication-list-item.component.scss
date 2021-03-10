@@ -1,0 +1,100 @@
+@import '../../colors';
+
+.items-publi {
+    margin-bottom: 10px;
+    background-color: $post-bg;
+    border-radius: 20px;
+    padding: 10px;
+    .overview {
+        border: solid 1px;
+        border-radius: 15px;
+        list-style-type: none;
+        padding: 10px;        
+        background-color: $grey-black;        
+        p {
+            font-style: italic;
+            color: whitesmoke;
+            white-space: pre-line; 
+        }
+    }        
+
+    .see-it {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        a {
+        background-color: $btn-main;
+        color: white;
+        padding: 10px 10px;
+        border-radius: 50%;
+        border: solid 1px rgb(48, 48, 48);
+        }
+        a:hover {
+            background-color: $grey-black;
+        }
+        a:focus {    
+            background-color: $prof-link;
+        }
+    }
+
+    .moderatedBackground {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .text-overview {
+        border: 1px;
+        border-radius: 5px;
+        background-color: whitesmoke;
+        max-height: 100px;
+        overflow: hidden;
+        padding: 10px;
+        margin-bottom: 10px;
+        p {
+            color: rgb(24, 24, 24);
+        }
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    span {
+        color: $prof-link;
+    }
+}
+
+li {
+    border: solid 1px black;
+    margin: 20px 0px;
+}
+
+.profilePic {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0px;
+    img {
+        background-color: black;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: solid 1px rgb(48, 48, 48);
+        margin-right: 10px;
+    }
+    p {
+        padding-top: 15px; 
+        a:focus {
+            border: solid 1px $prof-link;
+            padding: 2px;
+        }
+        a:hover {
+            color: whitesmoke;
+        }
+    }    
+}
+
+.see-it img {
+    width: 30px;
+    height: 30px;
+}

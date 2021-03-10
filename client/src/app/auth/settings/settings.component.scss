@@ -1,0 +1,23 @@
+@import '../../colors.scss';
+
+.frame {
+    border: solid 1px $btn-main;
+    border-radius: 20px;
+    background-color: $post-bg;
+}
+
+form {
+    button {
+    border: none;
+    }
+}
+
+button {
+    background-color: $btn-main;
+    color: whitesmoke;
+    border: solid 1px $grey-black;
+}
+
+button:hover {
+    background-color: $grey-black;
+}
