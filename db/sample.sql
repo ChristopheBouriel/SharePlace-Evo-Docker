@@ -1,4 +1,4 @@
-CREATE DATABASE shareplacevolution DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+CREATE DATABASE shareplacevolution DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
 CREATE TABLE IF NOT EXISTS shareplacevolution.users ( 
@@ -11,19 +11,19 @@ CREATE TABLE IF NOT EXISTS shareplacevolution.users (
     serviceName VARCHAR(30) NOT NULL, 
     email VARCHAR(40),
     imageUrl VARCHAR(255) DEFAULT 'https://res.cloudinary.com/cbpicstore/image/upload/v1615060643/SharePlace-Evo/default.png', 
-    aboutMe TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci, 
+    aboutMe TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci, 
     isMod BOOLEAN DEFAULT 0, 
     date_logout DATETIME, 
     PRIMARY KEY (id) 
 )
-ENGINE=INNODB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+ENGINE=INNODB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS shareplacevolution.publications ( 
     id INT UNSIGNED NOT NULL AUTO_INCREMENT, 
     userId VARCHAR(60) NOT NULL, 
     date_publication DATETIME NOT NULL, 
     title VARCHAR(60) NOT NULL, 
-    content TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL, 
+    content TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL, 
     numberComments INT DEFAULT 0, 
     likes INT DEFAULT 0, 
     userName VARCHAR(40) NOT NULL, 
@@ -33,25 +33,25 @@ CREATE TABLE IF NOT EXISTS shareplacevolution.publications (
     viewed BOOLEAN DEFAULT 1, 
     PRIMARY KEY (id) 
 )
-ENGINE=INNODB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+ENGINE=INNODB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS shareplacevolution.comments ( 
     id INT UNSIGNED NOT NULL AUTO_INCREMENT, 
     userId VARCHAR(60) NOT NULL, 
     postId INT NOT NULL, 
     date_comment DATETIME NOT NULL, 
-    content TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL, 
+    content TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL, 
     userName VARCHAR(40) NOT NULL, 
     modified BOOLEAN DEFAULT 0, 
     date_modif DATETIME, 
     moderated BOOLEAN DEFAULT 0, 
     PRIMARY KEY (id) 
-)ENGINE=INNODB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+)ENGINE=INNODB DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `aboutMe`, `isMod`) VALUES ("1", "8a56jhr2-a2d1-4052-9e51-c456gh3e6785", "Mr Malok", "$2b$10$FIrRIAzwqpREWdo7a2AR1.2IrAypp2Kx4y/zQ6N7YQad9hFxRyqPO", "Jean", "Martin", "comptabilité", "j.martin@gmail.com", "Et voilà du texte", "0");
 INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `aboutMe`, `isMod`) VALUES ("2", "8a56jhr2-a2d1-4052-9e51-c17bsug8r3hi", "Daphidoo", "$2b$10$0cXdu.5nSbZRUdHyf.FEE.blxYhkd3pv9oaUNvhari9usLS.h9Wny", "Daphné", "Scoubi", "RH", "mystery.machine@gmail.com", "", "0");
 INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `aboutMe`, `isMod`, `date_logout`) VALUES ("3", "8a56jhr2-a2d1-4052-9e51-c1hfur3e6719", "Snuggle", "$2b$10$mL/Gx0pZ0R2avn2JysrJuumYyEzHSr3ztbF5ZhRO9w5/peTr6DsNK", "Damien", "Remplin", "RH", "damrem@gmail.com", "Ride free", "0", "2020-10-20 10:16:14");
-INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `aboutMe`, `isMod`, `date_logout`) VALUES ("22", "8a56jhr2-a2d1-4052-9e51-c1hdue8e6785", "Bourreau de la mode", "$2b$10$Z7Y7O2y8uqm3YzlXDEWbbeiOEkruRbrpd6zFg4jNEQjRp.WwrbvTq", "Carla", "Garfield", "Recherche et Développement", "carla.garfield@gmail.com", "Blabla blablabla bla...", "0", "2020-12-15 15:35:20");
+INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `imageUrl`, `aboutMe`, `isMod`, `date_logout`) VALUES ("22", "8a56jhr2-a2d1-4052-9e51-c1hdue8e6785", "Bourreau de la mode", "$2b$10$Z7Y7O2y8uqm3YzlXDEWbbeiOEkruRbrpd6zFg4jNEQjRp.WwrbvTq", "Carla", "Garfield", "Recherche et Développement", "carla.garfield@gmail.com", "http://localhost:3000/images/1614372540343.jpg", "Blabla blablabla bla...", "0", "2020-12-15 15:35:20");
 INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `aboutMe`, `isMod`) VALUES ("24", "8a56jhr2-a2d1-4052-9e51-c17b413e6785", "Majou", "$2b$10$cZEoATMzcYhj2w/ERyMuUeNSLLdAGd5OG88J5rsyemSRtvzzLu7x6", "Marie", "Jourdain", "Informatique", "marie.jourdain@gmail.com", "Rien pour le moment...", "0");
 INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `aboutMe`, `isMod`, `date_logout`) VALUES ("39", "4bf488fc-fbb1-40c6-ae8e-3983e7432a82", "Kurty", "$2b$10$iJ5pCKqh87PVmdNBZJq7OeJUrIPx0H5ZwfyBXk2ayjLjicRDsH51e", "Kurt", "Cobain", "Export", "kc@gmail.com", "Searching for Nirvana", "0", "2020-10-22 15:01:11");
 INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `aboutMe`, `isMod`, `date_logout`) VALUES ("41", "13c46d3e-7eec-4d5c-b94b-272505f7ce5f", "Tof", "$2b$10$7z66KcLTl158AlWyNcIsnOt95gQS2CR3Qp8FafMbxLEmkY/gM2USS", "Christophe", "Bouriel", "Informatique", "c.bouriel@gmail.com", "J'aime coder, mais ce projet était énorme en termes de charge de travail !", "0", "2021-02-11 18:07:20");
@@ -60,7 +60,7 @@ INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassw
 INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `aboutMe`, `isMod`, `date_logout`) VALUES ("54", "48f54b2a-e1bb-45f1-882f-a2aeb9df3f99", "Mag", "$2b$10$g5DRQIFS8yKltES9wM.5Jeg7p2yWsRqhXu7nVSm2iwKf7DhfNphtC", "Magali", "Morgen", "Achats", "mag.morg@gmail.com", "Passion fruit lover", "0", "2020-10-20 22:27:36");
 INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `aboutMe`, `isMod`, `date_logout`) VALUES ("57", "79f77917-8259-4e55-97e0-5324ed57d1bd", "Pier", "$2b$10$hKUZEYAVbdPTe66PuJx7/eizJEpAD3ApbullB53Z0QXBiJu79xa.q", "Pierre", "Duguigné", "Informatique", "", "", "0", "2020-10-22 14:42:05");
 INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `aboutMe`, `isMod`, `date_logout`) VALUES ("62", "c49dd606-fd15-439f-bca0-c633c9bbd66b", "Rens", "$2b$10$jISoeOWHs9FrWSUonMtKZ.XCG2IRrjZJuiEg3HfRoApFkBL7l1Bau", "René", "Cobain", "Production", "see.next@gmail.com", "", "0", "2020-10-30 13:58:41");
-INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `aboutMe`, `isMod`, `date_logout`) VALUES ("4", "13c46d3e-7eec-4d5c-b94b-272505f8df6g", "Moderator", "$2b$10$IVu0OWdfml4Se9LIVZTRWORqns8qh72YEcUVNcCMnJcrxtxW9xv8u", "Marc", "Lespubly", "Communication", "marc.lespubly@groupomania.fr", "En cas d'interventionde ma part, les publications ou commentaires modérés ne seront pas effacés mais ne seront plus accessibles, sauf pour vous. Vous pourrez les supprimer vous-même ou les modifier avant de m'en informer : nous verrons alors si la modération peut être levée.", "1", "2021-02-11 18:07:20");
+INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `imageUrl`, `aboutMe`, `isMod`, `date_logout`) VALUES ("4", "13c46d3e-7eec-4d5c-b94b-272505f8df6g", "Moderator", "$2b$10$IVu0OWdfml4Se9LIVZTRWORqns8qh72YEcUVNcCMnJcrxtxW9xv8u", "Marc", "Lespubly", "Communication", "marc.lespubly@groupomania.fr", "http://localhost:3000/images/1614769562580.png", "En cas d'interventionde ma part, les publications ou commentaires modérés ne seront pas effacés mais ne seront plus accessibles, sauf pour vous. Vous pourrez les supprimer vous-même ou les modifier avant de m'en informer : nous verrons alors si la modération peut être levée.", "1", "2021-02-11 18:07:20");
 INSERT INTO `shareplacevolution`.`users` (`id`, `userId`, `userName`, `userPassword`, `firstname`, `lastname`, `serviceName`, `email`, `aboutMe`, `isMod`, `date_logout`) VALUES ("63", "13c46d3e-7eec-4d5c-b94b-272505f8ddrg", "Userix", "$2b$10$F88TB8HL0vEVMr6ucNSm3ugc9mN1TvM.aTw.2TcXmpW07wDIfszu2", "John", "Doe", "Qualité", "john.doe@groupomania.fr", "Rien, mais vous pouvez changer cela en guise de test pour la modification du profil !", "0", "2021-02-11 18:07:20");
 
 
