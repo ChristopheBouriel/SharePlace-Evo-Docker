@@ -16,14 +16,12 @@ services:
                     ## it is not done by default inside the container :
                     ## during the insertion of the initial datas from sample.sql, for exemple,
                     ## all the letters with accents are changed 
-      DB_CHARSET: utf8mb4
-      DB_COLLATION: utf8mb4_general_ci
     ports:
       - 3307:3306 ## 3307 is only because I already have a MySQL instance running on my machine and using port 3306
     restart: unless-stopped
     volumes:
       - ./db/sample.sql:/docker-entrypoint-initdb.d/sample.sql
-    ## command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --character-set-client-handshake=FALSE
 
 ## Part to remove if you don't want phpMyAdmin
   phpmyadmin:
