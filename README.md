@@ -49,7 +49,7 @@ Now, to get the whole app running in containers :
 	That will start again where the process was at, and terminate it.  
 	*This is likely a problem of timeout because my machine is not really powerfull... but maybe yours too.*
 
-3. Then, just go to localhost:4200 in your browser and try the app.
+3. Then, just go to localhost:4200 in your browser and try the app – maybe you'll have to wait for a while until the server mabage to connect with the database.
 
 	If you don't want to create a profile, you can log in with this one :  
 	* Username --> Userix
