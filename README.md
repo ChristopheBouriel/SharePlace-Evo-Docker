@@ -1,5 +1,5 @@
 # About this repo :
-This application is an enterprise social network which was a project for my Web Developper training and that I decided to progressively improve.
+This is a social network application for an company, which was a project for my Web Developper training and that I decided to progressively improve.
 It has already been deployed using cloud services and you can find the [frontend](https://github.com//ChristopheBouriel/SharePlace-Evolution-UI) and [backend](https://github.com//ChristopheBouriel/SharePlace-Evolution-API) in my repositories. 
 You can also read more about this project in my portfolio :  
 https://portfolio-christophe-bouriel.netlify.app  
