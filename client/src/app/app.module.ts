@@ -30,6 +30,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { NotificationsListComponent } from './notifications/notifications-list/notifications-list.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
@@ -81,6 +82,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     MatProgressSpinnerModule,
     MatButtonModule,
+    MatAutocompleteModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
