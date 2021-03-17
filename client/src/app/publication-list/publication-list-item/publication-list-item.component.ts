@@ -26,6 +26,9 @@ export class PublicationListItemComponent implements OnInit {
   
   moderator: boolean;
 
+  numberCommentsMapping:
+      {[k: string]: string} = {'=0': 'Pas de commentaires', '=1': '1 commentaire', 'other': '# commentaires'};
+
   constructor(private publicationService: PublicationService,
               private authService: AuthService) { }
 
