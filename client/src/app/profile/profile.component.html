@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="page-top-profil">
     <div class="col-10 col-lg-8 mx-auto">
 
         <mat-spinner style="margin:0 auto;" *ngIf="loading"></mat-spinner>
@@ -23,7 +23,7 @@
             </div>
             <div id="second">
                 <p>Service : <span>{{profile?.serviceName}}</span></p>
-                <p *ngIf="email">e-mail : <span>{{profile?.email}}</span></p>
+                <p *ngIf="profile?.email">e-mail : <span>{{profile?.email}}</span></p>
             </div>        
             <div id="aboutMe" *ngIf="aboutMe">
                 <p>A propos de moi : </p>
@@ -36,17 +36,17 @@
                     <button *ngIf="!searching" routerLink="/publications"><img src="./assets/images/list-icon.png" alt="list icon"></button>
                 </div>
                 <div class="col-4 mx-auto my-1 text-center">
-            <button  *ngIf="!fromList && !searching && !fromUsersList && !isMine" routerLink="/publications/{{fromPost}}"><img src="./assets/images/back-icon.png" alt="back icon"></button>
-        </div>
+                    <button  *ngIf="!fromList && !searching && !fromUsersList && !isMine" routerLink="/publications/{{fromPost}}"><img src="./assets/images/back-icon.png" alt="back icon"></button>
+                </div>
                 <div class="col-4 mx-auto my-1 text-right">
                     <button *ngIf="!searching" (click)="onGetList()"><img src="./assets/images/search-icon.png" alt="search icon"></button>
                 </div>
             </div>            
-        </div>
+        </div>        
         
-        <br/>
-        <br/>
         <div *ngIf="!searching">
+            <br/>
+            <br/>
             <h2 class="text-center" *ngIf="publications?.length">Publications</h2>
             <ul class="list-group">
                 <app-user-publications  *ngFor="let publication of publications; let i = index"
@@ -66,23 +66,24 @@
         
         <div class="search row no-gutters mx-0" *ngIf="searching">
             <div class="text-center col-6 col-sm-2 order-2 order-sm-1 py-sm-3">
-                <button class="mx-auto" (click)="onBackFromList()"><img src="./assets/images/back-icon.png" alt="back icon"></button>
+                <button class="mx-auto" (click)="searching = !searching"><img src="./assets/images/back-icon.png" alt="back icon"></button>
             </div>
             <h2 class="text-center align-self-center col-12 col-sm-8 py-3 px-2 mb-2 mx-auto order-1 order-sm-2">Liste des utilisateurs</h2>
             <div class="text-center col-6 col-sm-2 order-3 py-sm-3">
-                <button (click)="onResearch()"><img src="./assets/images/search-icon.png" alt="search icon"></button>
+                <button (click)="onButtonSearch()"><img src="./assets/images/search-icon.png" alt="search icon"></button>
             </div>
         </div>
-        <br/>
         <div class="users-list" *ngIf="searching">
             <div id="search-tool" class="mb-5" *ngIf="research">
-                <p class="noUser mx-auto" *ngIf="noUser">{{noUser}}</p>
-                <form [formGroup]="searchForm" class="row no-gutters align-items-center mx-0 mx-sm-5" >
+                <div id="noUser">
+                    <p class="col-10 mx-auto" *ngIf="noUser">{{noUser}}</p>
+                </div>
+                <form [formGroup]="searchForm" class="row no-gutters align-items-center mt-1 mx-0 mx-sm-5" >
                     <mat-form-field class="col-8">                            
                         <input type="text"
                                 id="search-window"
-                                placeholder="Entrer un nom d'utilisateur"
-                                aria-label="Entrer un nom d'utilisateur"
+                                placeholder="Entrer un utilisateur"
+                                aria-label="Entrer un utilisateur"
                                 name="search"
                                 #inputUserName
                                 matInput
@@ -96,7 +97,7 @@
                     </mat-form-field>
                     <button mat-raised-button class="mx-auto col-4" type="submit" (click)="onSearch(inputUserName.value)">Rechercher</button>
                 </form>                        
-            </div>       
+            </div>                
             <ul class="list-group mt-4">        
                 <app-users-list *ngFor="let shortProfile of shortProfiles; let j = index"
                     [userName]="shortProfile.userName"

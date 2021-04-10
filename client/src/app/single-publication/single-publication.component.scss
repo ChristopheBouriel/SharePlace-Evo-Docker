@@ -1,9 +1,5 @@
 @import '../colors';
 
-/*.single-publication-like {
-    background-color: rgb(157, 194, 147);
-}*/
-
 .single-publication {
     border: solid 1px black;
     border-radius: 10px;
@@ -14,7 +10,7 @@
         font-weight: 500;
         font-style: italic;
         color: $btn-main;
-        
+        font-weight: 600;
     }
 
     h2 {
@@ -23,12 +19,7 @@
         font-style: italic;
         font-weight: 600;
     }
-    a:hover {
-        color: whitesmoke;
-    }
-    a:focus {
-        color: $btn-main;
-    }
+    
 }
 
 .infos-post {
@@ -42,9 +33,16 @@
 
 .infos-date {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     a {
         color: $prof-link;
+    }
+    a:hover {
+        color: whitesmoke;
+    }
+    a:focus {
+        border: solid 1px $btn-main;
+        padding: 0px 3px;
     }
 }
 
@@ -62,6 +60,7 @@
 .post-buttons {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background-color: $btn-main;
     border: solid 1px $grey-black;
     border-radius: 10px;
@@ -69,7 +68,7 @@
         /*margin: 0px 10px;*/
     button {
         background-color: $btn-main; 
-        padding: 5px 5px;       
+        padding: 7px 7px;       
     }
     img {
         width: 25px;
@@ -80,6 +79,34 @@
         img {
         width: 35px;
         height: 35px;
+        }
+        padding: 0px 0px;
+    }    
+    
+    button:focus {
+        padding: 7px;
+        box-shadow: inset 0px 0px 2px 1px whitesmoke;
+    }
+}
+
+.like {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    button {
+        background-color: $grey-black; 
+        padding: 5px 5px;
+        margin-right: 0px;     
+    }
+    img {
+        width: 35px;
+        height: 35px;
+       
+    }
+    button:hover {
+        img {
+        width: 45px;
+        height: 45px;
         }
         padding: 0px 0px;
     }
@@ -95,6 +122,19 @@ form {
     p {
         color: whitesmoke;
     }
+}
+
+#line {
+    min-height: 30px;
+    background-color: $post-bg;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+#confirm {
+    text-align: center;
+    color: rgb(33, 33, 33);
+    font-weight: 600;
 }
 
 .modr {
@@ -121,9 +161,7 @@ form {
         margin-right: 10px;
     }
     p {
-       padding-top: 15px; 
+       font-weight: 500;
     }
 }
-
-
 

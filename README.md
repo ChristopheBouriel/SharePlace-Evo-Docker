@@ -1,5 +1,5 @@
 # About this repo :
-This is a social network application for an company, which was a project for my Web Developper training and that I decided to progressively improve.
+This is a social network application for a company, which was a project for my Web Developper training and that I decided to progressively improve.
 It has already been deployed using cloud services and you can find the [frontend](https://github.com//ChristopheBouriel/SharePlace-Evolution-UI) and [backend](https://github.com//ChristopheBouriel/SharePlace-Evolution-API) in my repositories. 
 You can also read more about this project in my portfolio :  
 https://portfolio-christophe-bouriel.netlify.app  
@@ -49,7 +49,7 @@ Now, to get the whole app running in containers :
 	That will start again where the process was at, and terminate it.  
 	*This is likely a problem of timeout because my machine is not really powerfull... but maybe yours too.*
 
-3. Then, just go to localhost:4200 in your browser and try the app – maybe you'll have to wait for a while until the server mabage to connect with the database.
+3. Then, just go to localhost:4210 in your browser and try the app – maybe you'll have to wait for a while until the server mabage to connect with the database.
 
 	If you don't want to create a profile, you can log in with this one :  
 	* Username --> Userix

@@ -1,42 +1,17 @@
-.menu {
-    display:flex;
-    justify-content: flex-end;
-    align-items: center;
-   
-    a{
-        font-size: 0.9rem;
-        background-color: rgb(176, 94, 31);
-        border-radius: 5px;
-        color: white;
-        padding: 10px;
-        margin:5px;
-    }
-
-    a:hover {
-        background-color: rgba(255, 209, 129, 0.722);
-    }
-
-    a:focus {
-        //border: solid 3px black;
-        background-color: rgba(255, 209, 129, 0.722);
-    }
-    
-}
+@import '../colors.scss';
 
 .bannier {
     background-color: rgb(55, 55, 55);    
-    border: solid rgb(176, 94, 31) 3px;
+    border: solid $btn-main 3px;
     border-radius: 10px;
 }
 
-.job-place {
-    
+.job-place {    
     h1 {
         font-size: 3rem;
         font-weight: 600;
         font-style: italic;
-        color: rgba(255, 209, 129, 0.722);
-
+        color: $post-bg;
     }
 }
 
@@ -47,4 +22,38 @@ img {
 
 p {
     color: whitesmoke
+}
+
+.menu {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+   
+    a{
+        font-size: 0.9rem;
+        background-color: $btn-main;
+        border-radius: 5px;
+        color: white;
+        padding: 10px;
+        margin:5px;
+    }
+
+    a:hover {
+        background-color: $post-bg;
+    }
+
+    a:focus {
+        box-shadow: inset 0px 0px 1px 2px whitesmoke;
+    }
+    
+    .active-link {
+    background-color: $post-bg;
+}
+}
+
+.message {
+    height: 10px;
+    p{
+        color: whitesmoke;
+    }
 }

@@ -38,8 +38,11 @@
     height: 36px;    
 }
 
-.noUser {
-    color: red;
+#noUser {
+    height: 20px;    
+    p {
+        color: red;
+    }
 }
 
 .controls {
@@ -54,6 +57,7 @@
     button:hover {
         background-color: $grey-black;
     }
+
     img {
         width: 30px;
         height: 30px;

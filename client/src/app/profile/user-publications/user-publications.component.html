@@ -1,8 +1,6 @@
 
 
-<li [ngClass]="{'list-group-item': true,
-                'list-group-item-like': publicationLikes === 1}"
-                id="{{id}}"   class="mx-auto">
+<li [ngClass]="{'list-group-item': true}" id="{{id}}" class="mx-auto">
     <div class="overview">
         <h2 [ngStyle]="{color: 'rgb(176, 94, 31)'}">{{title}}</h2>
         <p>Par <span>{{publicationUserName}}</span> le {{publicationDate | date: 'd LLLL yyyy'}}</p>
@@ -12,6 +10,6 @@
         </div>
     </div>
     <div class="see-it" *ngIf="publicationModerated !== 1 || isAuthor">
-        <a  (click)="onSeePublication()"><img src="./assets/images/see-icon.png" alt="see icon"></a>
+        <a (click)="onSeePublication()"><img src="./assets/images/see-icon.png" alt="see icon"></a>
     </div>
 </li>

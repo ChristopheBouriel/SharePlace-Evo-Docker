@@ -12,7 +12,7 @@ import { PublicationService } from './services/publication.service';
 import { ProfileService } from './services/profile.service';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './services/auth-guard.service';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './auth/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -30,11 +30,13 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { NotificationsListComponent } from './notifications/notifications-list/notifications-list.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminListComponent } from './admin/admin-list/admin-list.component';
+
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { NavbarComponent } from './navbar/navbar.component';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -53,6 +55,11 @@ const appRoutes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'auth'},
   {path: '**', redirectTo: 'auth' }
 ];
+
+const routerOptions: ExtraOptions = {
+  useHash: false,
+  anchorScrolling: 'enabled'
+};
 
 @NgModule({
   declarations: [
@@ -73,7 +80,8 @@ const appRoutes: Routes = [
     NotificationsComponent,
     NotificationsListComponent,
     AdminComponent,
-    AdminListComponent
+    AdminListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +91,7 @@ const appRoutes: Routes = [
     MatProgressSpinnerModule,
     MatButtonModule,
     MatAutocompleteModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, routerOptions)
   ],
   providers: [
     PublicationService,
