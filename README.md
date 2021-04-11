@@ -49,7 +49,7 @@ Now, to get the whole app running in containers :
 	That will start again where the process was at, and terminate it.  
 	*This is likely a problem of timeout because my machine is not really powerfull... but maybe yours too.*
 
-3. Then, just go to localhost:4210 in your browser and try the app – maybe you'll have to wait for a while until the server mabage to connect with the database.
+3. Then, just go to **localhost:4210** in your browser and try the app – maybe you'll have to wait for a while until the server manage to connect with the database.
 
 	If you don't want to create a profile, you can log in with this one :  
 	* Username --> Userix
@@ -59,12 +59,12 @@ Now, to get the whole app running in containers :
 	* Username --> Moderator
 	* Password --> moderate
 
-	If you decided to install the phpMyAdmin, you can find the panel at localhost:8080 in your browser (the DB name is "sampledb") :  
+	If you decided to install the phpMyAdmin, you can find the panel at **localhost:8080** in your browser (the DB name is "sampledb") :  
 	* Username --> Root
 	* Password --> Root
 
 4. In the end, to stop after testing, type the command :  
 	`docker-compose down`  
-	If you want to stop and then clear up everything*, type the command :  
+	If you want to stop and then clear up everything, type the command :  
 	`docker-compose down --rmi all --volume`  
-	*Note that you still have to remove node and nginx images manually.
+	
