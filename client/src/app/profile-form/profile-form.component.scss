@@ -22,7 +22,8 @@ label {
         height: 160px;
         border-radius: 50%;
         border: solid 1px $btn-main;
-        background-color: black;        
+        background-color: black;
+        object-fit: cover;        
     }
     button {
         background-color: $btn-main;
