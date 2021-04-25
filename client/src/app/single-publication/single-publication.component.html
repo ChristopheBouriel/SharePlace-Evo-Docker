@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mt-5">
   <div class="col-xs-10 col-md-9 col-lg-8 mx-auto">
 
     <mat-spinner style="margin:0 auto" class="mx-auto" *ngIf="loading"></mat-spinner>
@@ -64,7 +64,7 @@
         
         <div *ngIf=!modifying  class="post-buttons row no-gutters col-9 col-sm-6 mx-auto">
             <button (click)="commenting = true"><img src="./assets/images/comment-icon.png" alt="comment icon"></button>
-            <button routerLink="/publications" fragment="{{postId}}"><img src="./assets/images/list-icon.png" (click)="onBackToList()" alt="back icon"></button>
+            <button routerLink="/publications"><img src="./assets/images/list-icon.png" (click)="onBackToList()" alt="back icon"></button>
             <button *ngIf="!isAuthor" routerLink="/profile/{{publication?.userName}}" fragment="page-top-profile" (click)="onSeeProfile()"><img src="./assets/images/profile-icon.png" alt="profile icon"></button>
             <button *ngIf="isAuthor" (click)="onWantModify()"><img src="./assets/images/write-icon.png" alt="edit icon"></button>        
         </div>

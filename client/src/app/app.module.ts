@@ -58,7 +58,8 @@ const appRoutes: Routes = [
 
 const routerOptions: ExtraOptions = {
   useHash: false,
-  anchorScrolling: 'enabled'
+  anchorScrolling: 'enabled',
+  //scrollPositionRestoration: 'enabled'
 };
 
 @NgModule({
@@ -91,7 +92,7 @@ const routerOptions: ExtraOptions = {
     MatProgressSpinnerModule,
     MatButtonModule,
     MatAutocompleteModule,
-    RouterModule.forRoot(appRoutes, routerOptions)
+    RouterModule.forRoot(appRoutes, routerOptions),
   ],
   providers: [
     PublicationService,

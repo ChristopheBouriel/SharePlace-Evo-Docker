@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewChecked } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { PublicationService} from '../services/publication.service';
 import { AuthService } from '../services/auth.service';
@@ -6,12 +6,13 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 
 import { forbiddenCharactersValidator } from './../input-validators';
+import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-publication-list',
   templateUrl: './publication-list.component.html',
   styleUrls: ['./publication-list.component.scss']
 })
-export class PublicationListComponent implements OnInit {
+export class PublicationListComponent implements OnInit, AfterViewChecked {
 
   isAuth = false;
   publications: any[];
@@ -24,7 +25,8 @@ export class PublicationListComponent implements OnInit {
   constructor(private publicationService: PublicationService,
               private formBuilder: FormBuilder,
               private authService: AuthService,
-              private router: Router) {}
+              private router: Router,
+              private viewportScroller: ViewportScroller) {}
 
   ngOnInit() {
     this.publicationsSubscription = this.publicationService.publicationsSubject.subscribe(
@@ -38,6 +40,12 @@ export class PublicationListComponent implements OnInit {
       publication: new FormControl(null, [Validators.required, Validators.maxLength(4000), forbiddenCharactersValidator(/[<>*]/)]),
         
     });
+    
+  }
+
+  ngAfterViewChecked() {
+    this.viewportScroller.setOffset([0,100]);
+    this.viewportScroller.scrollToAnchor(this.publicationService.lastSeenInList);
   }
 
   onWantPost() {

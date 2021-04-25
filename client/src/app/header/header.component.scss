@@ -10,7 +10,7 @@
     font-style: normal;
   }
 
-  @media (max-width: 575.98px) {
+@media (max-width: 575.98px) {
     .cname {
         height: 100px;
         p {
@@ -57,14 +57,16 @@
  
 
 .cname {
+    //height: 140px;
     margin-bottom: 40px;
     display: flex;
     align-items: flex-end;
     p {
         font-family: 'Belligerent-Madness';
+        //font-size: 16vw;
+        //padding: 10px;
     }
 }
-
 
 .bannier {
     background-color: rgb(55, 55, 55);    
@@ -123,4 +125,3 @@ p {
         color: whitesmoke;
     }
 }
-
