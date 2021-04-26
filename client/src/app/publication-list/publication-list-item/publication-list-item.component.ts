@@ -40,12 +40,12 @@ export class PublicationListItemComponent implements OnInit {
     this.content = this.publicationContent.replace(/&µ/gi,'\"');
     this.title = this.publicationTitle.replace(/&µ/gi,'\"');
     this.numberLikes = JSON.parse(this.publicationLikeUsernames).length;
-    
     this.authService.isAdmin$.subscribe(
       (isAdmin) => {
         this.moderator = isAdmin;
       }
-    )   
+    );
+    this.publicationService.numberIndexes.next(this.index);
   }
 
   onSeePublication(show) {

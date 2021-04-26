@@ -122,7 +122,6 @@ export class ProfileComponent implements OnInit {
       (fromList:boolean) => {
         this.fromList = fromList;
       });
-    
   }
 
   checkAboutMe() {
@@ -146,6 +145,8 @@ export class ProfileComponent implements OnInit {
     this.profileService.getUsersList();
     this.searching = true;
     this.fromUsersList = true;
+
+    
   }
 
   private _filter(value: string): string[] {

@@ -30,6 +30,7 @@
         <button mat-raised-button class="my-2 mr-2" [disabled]="publicationForm.invalid" (click)="onPost()">Envoyer</button>
         <button mat-raised-button class="mb-3" (click)="onCancel()">Annuler</button> 
     </form>
+
     <ul class="list-group col-md-10 mx-auto col-lg-12 px-0">
         <app-publication-list-item  *ngFor="let publication of publications; let i = index"
               [publicationTitle]="publication.title"
@@ -45,5 +46,5 @@
               [publicationLikeUsernames]="publication.likeUsernames">
         </app-publication-list-item>
     </ul>
-  </div>
+  </div> 
 </div>
